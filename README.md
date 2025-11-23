@@ -161,7 +161,4 @@ CREATE TABLE links (
 
 3. Deploy to Vercel, Railway, or your preferred platform
 
-## License
-
-MIT
 
