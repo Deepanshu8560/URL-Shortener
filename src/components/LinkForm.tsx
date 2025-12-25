@@ -18,7 +18,6 @@ export default function LinkForm({ onSuccess }: LinkFormProps) {
     setError(null);
     setSuccess(false);
 
-    // Validation
     if (!url.trim()) {
       setError('Please enter a URL');
       return;

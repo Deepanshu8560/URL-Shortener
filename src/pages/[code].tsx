@@ -42,7 +42,6 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 
     const { target_url, id } = result.rows[0];
 
-    // Update click count and last clicked time
     await pool.query(
       `UPDATE links 
        SET clicks = clicks + 1, 
@@ -50,15 +49,14 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
        WHERE id = $1`,
       [id]
     ).catch((err) => {
-      // Log error but don't fail the redirect
       console.error('Error updating click count:', err);
     });
 
-    // Perform 302 redirect
+    
     return {
       redirect: {
         destination: target_url,
-        permanent: false, // 302 redirect
+        permanent: false, 
       },
     };
   } catch (error) {

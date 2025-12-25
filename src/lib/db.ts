@@ -1,7 +1,5 @@
 import { Pool } from 'pg';
 
-// Create a connection pool
-// Neon requires SSL connections - the connection string should include sslmode=require
 const isLocalhost = process.env.DATABASE_URL?.includes('localhost') || 
                     process.env.DATABASE_URL?.includes('127.0.0.1') ||
                     !process.env.DATABASE_URL?.includes('neon.tech');
@@ -10,7 +8,7 @@ const poolConfig: any = {
   connectionString: process.env.DATABASE_URL,
 };
 
-// Only set SSL explicitly if not in connection string and not localhost
+
 if (!isLocalhost && !process.env.DATABASE_URL?.includes('sslmode')) {
   poolConfig.ssl = { rejectUnauthorized: false };
 } else if (isLocalhost) {
@@ -21,7 +19,6 @@ const pool = new Pool(poolConfig);
 
 let dbInitialized = false;
 
-// Initialize database schema
 export async function initDatabase() {
   if (dbInitialized) return;
   
@@ -47,7 +44,6 @@ export async function initDatabase() {
   }
 }
 
-// Auto-initialize on import (for server-side)
 if (typeof window === 'undefined') {
   initDatabase().catch(console.error);
 }

@@ -42,15 +42,12 @@ export default async function handler(
       const body = createLinkSchema.parse(req.body);
       const { url, code: customCode } = body;
 
-      // Validate URL
       if (!isValidUrl(url)) {
         return res.status(400).json({ error: 'Invalid URL format' });
       }
 
-      // Generate or use custom code
       let code = customCode || generateShortCode();
       
-      // Ensure code is unique
       if (customCode) {
         const existing = await pool.query(
           'SELECT id FROM links WHERE code = $1 AND deleted_at IS NULL',
@@ -97,7 +94,7 @@ export default async function handler(
     }
   } else {
     res.setHeader('Allow', ['GET', 'POST']);
-    res.status(405).json({ error: `Method ${req.method} not allowed` });
+    res.status(409).json({ error: `Method ${req.method} not allowed` });
   }
 }
 
