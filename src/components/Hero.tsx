@@ -45,7 +45,7 @@ export default function Hero() {
                             href="/dashboard"
                             className="bg-gradient-to-r from-teal-500 to-cyan-600 text-white font-semibold px-10 py-4 rounded-xl text-lg shadow-2xl hover:shadow-teal-500/50 hover:scale-105 transition-all duration-300"
                         >
-                            Get Started Free
+                            Get Started
                         </Link>
                         <button className="bg-white/10 backdrop-blur-md border border-white/20 text-white font-semibold px-10 py-4 rounded-xl text-lg hover:bg-white/20 transition-all duration-300">
                             Watch Demo
