@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import Link from 'next/link';
-import { Link as LinkType } from '@/pages/index';
+import { Link as LinkType } from '@/types';
 
 interface LinksTableProps {
   links: LinkType[];

@@ -2,14 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
 import LinkForm from '@/components/LinkForm';
 import LinksTable from '@/components/LinksTable';
-
-export interface Link {
-  code: string;
-  target_url: string;
-  clicks: number;
-  created_at: string;
-  last_clicked_at: string | null;
-}
+import { Link } from '@/types';
 
 export default function Dashboard() {
   const [links, setLinks] = useState<Link[]>([]);
