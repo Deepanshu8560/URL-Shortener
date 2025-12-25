@@ -10,19 +10,19 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <div className="min-h-screen flex flex-col">
       <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isLandingPage
-          ? 'glass border-b border-white/20'
-          : 'bg-white shadow-sm border-b border-gray-200'
+        ? 'bg-slate-900/95 backdrop-blur-md border-b border-teal-500/30 shadow-lg'
+        : 'bg-white shadow-sm border-b border-gray-200'
         }`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <Link
               href="/"
               className={`text-2xl font-bold transition-colors ${isLandingPage
-                  ? 'text-white hover:text-white/80'
-                  : 'text-blue-600 hover:text-blue-700'
+                ? 'text-white hover:text-teal-300'
+                : 'text-gray-900 hover:text-blue-600'
                 }`}
             >
-              <span className={isLandingPage ? '' : 'gradient-text'}>
+              <span className={isLandingPage ? 'bg-gradient-to-r from-teal-300 to-cyan-300 bg-clip-text text-transparent' : ''}>
                 URL Shortener
               </span>
             </Link>
@@ -30,12 +30,12 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               <Link
                 href="/"
                 className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${isActive('/')
-                    ? isLandingPage
-                      ? 'bg-white/20 text-white'
-                      : 'bg-blue-100 text-blue-700'
-                    : isLandingPage
-                      ? 'text-white/90 hover:bg-white/10 hover:text-white'
-                      : 'text-gray-600 hover:bg-gray-100 hover:text-gray-900'
+                  ? isLandingPage
+                    ? 'bg-teal-500/20 text-teal-300 border border-teal-500/30'
+                    : 'bg-blue-100 text-blue-700'
+                  : isLandingPage
+                    ? 'text-white hover:bg-white/10 hover:text-teal-300'
+                    : 'text-gray-700 hover:bg-gray-100 hover:text-gray-900'
                   }`}
               >
                 Home
@@ -43,12 +43,12 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               <Link
                 href="/dashboard"
                 className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${isActive('/dashboard')
-                    ? isLandingPage
-                      ? 'bg-white/20 text-white'
-                      : 'bg-blue-100 text-blue-700'
-                    : isLandingPage
-                      ? 'text-white/90 hover:bg-white/10 hover:text-white'
-                      : 'text-gray-600 hover:bg-gray-100 hover:text-gray-900'
+                  ? isLandingPage
+                    ? 'bg-teal-500/20 text-teal-300 border border-teal-500/30'
+                    : 'bg-blue-100 text-blue-700'
+                  : isLandingPage
+                    ? 'text-white hover:bg-white/10 hover:text-teal-300'
+                    : 'text-gray-700 hover:bg-gray-100 hover:text-gray-900'
                   }`}
               >
                 Dashboard
@@ -56,12 +56,12 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               <Link
                 href="/health"
                 className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${isActive('/health')
-                    ? isLandingPage
-                      ? 'bg-white/20 text-white'
-                      : 'bg-blue-100 text-blue-700'
-                    : isLandingPage
-                      ? 'text-white/90 hover:bg-white/10 hover:text-white'
-                      : 'text-gray-600 hover:bg-gray-100 hover:text-gray-900'
+                  ? isLandingPage
+                    ? 'bg-teal-500/20 text-teal-300 border border-teal-500/30'
+                    : 'bg-blue-100 text-blue-700'
+                  : isLandingPage
+                    ? 'text-white hover:bg-white/10 hover:text-teal-300'
+                    : 'text-gray-700 hover:bg-gray-100 hover:text-gray-900'
                   }`}
               >
                 Health
